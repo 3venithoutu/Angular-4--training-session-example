@@ -1,0 +1,21 @@
+ <h3>
+  <ul>
+    <li *ngFor='let course of courses | sort'>
+      <a [routerLink]="['/courseDetails',course.courseName]">
+           {{course.courseName  }}
+      </a>
+    </li>
+  </ul> 
+</h3> 
+  Date : {{bday | date :'fullDate' | lowercase }}
+  <hr/>
+  <div>
+    <!-- Child component -->
+      <home-child [variable]=input></home-child>
+      Enter Text: <input type='text' [(ngModel)]=input />
+  </div>  
+<hr/>
+
+<!-- Loading / Inject Rating component 
+<home-rating></home-rating>
+-->

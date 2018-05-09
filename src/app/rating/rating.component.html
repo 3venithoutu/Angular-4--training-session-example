@@ -1,0 +1,15 @@
+<h2>Fetch Raing:</h2>
+<p>Enter Course Name: <input type='text' #cname/><br/>
+  <button class='btn btn-primary' (click)='getRating(cname.value)'>Fetch Rating</button>
+</p>
+<br/>
+<div *ngIf='status;then temp1 else temp2'></div>
+
+<ng-template #temp1>
+Rating : {{rating}}
+</ng-template>
+
+
+<ng-template #temp2>
+Course Does not exist!!
+</ng-template>

@@ -1,0 +1,22 @@
+<h2>User name: {{user.username}}
+    Age : {{user.age}}
+    City:{{user.city}}
+</h2>
+<hr/>
+<h3>User Details added:</h3>
+<ul>
+  <li *ngFor='let obj of userDetails'>
+    {{obj.username}}
+    {{obj.age}}
+    {{obj.city}}
+  </li>
+</ul>
+<!-- [(ngModel)] is 2 way binding -->
+<h3>Edit User Details:</h3>
+Enter username: <input type='text' [(ngModel)]=user.username  #name/><br/>
+Enter age: <input type='text' [(ngModel)]=user.age  #age/><br/>
+Enter city: <input type='text' [(ngModel)]=user.city #city /><br/>
+<button (click)='addUser(name.value,age.value,city.value)' class='btn btn-primary'>Add User</button>
+<br/>
+
+<a routerLink='/course'>Course Details</a>

@@ -1,0 +1,23 @@
+<!--<div>
+<ul>
+  <li *ngFor='let post of posts'>
+    <h2>{{post.title}}</h2>
+    <h3>{{post.body}}</h3>
+  </li>
+</ul>
+</div> -->
+
+Enter post id: <input type='text' #pid/><br/>
+<button (click)='getSpecificPost(pid.value)' class='btn btn-primary'>Get Post</button>
+<hr/>
+<div *ngIf='flag; then temp1 else temp2'></div>
+<hr/>
+<ng-template #temp1>
+   Title : {{post.title}}
+    Body : {{post.body}}
+</ng-template>
+
+<ng-template #temp2>
+  {{errorMessage}}
+</ng-template>
+

@@ -1,0 +1,42 @@
+<!--The content below is only a placeholder and can be replaced.
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+ 
+</div>
+<h2>Email:{{email}}</h2>
+<hr/>
+<button (click)='playHobbies()' class='btn btn-primary'>{{status ? 'Hide Hobbies' : 'Show Hobbies'}}</button>
+
+<div *ngIf='status;then temp1 else temp2'></div>
+<ng-template #temp1>
+   <ul>
+    <li *ngFor='let hobby of hobbies'>
+        {{hobby}}
+    </li>
+  </ul>
+</ng-template>
+
+<ng-template #temp2>
+  You choose not to display Hobbies!!!
+</ng-template>
+<hr/>
+ <img [src]=img width="500" height="300" /> 
+ <span homeShadow>I am custom directive being used!!!</span>
+ -->
+
+<hr/>
+<nav>
+  <a routerLink='/user'>User Details</a><br/>
+ <!-- <a routerLink='/course'>Course Details</a><br/> -->
+  <a routerLink='/post'>Post Details</a><br/>
+  <a routerLink='/quote'>Quote Details</a><br/>
+  <a routerLink='/rating'>Rating Details</a><br/>
+  <a routerLink='/student'>Student Details</a><br/>
+  <a routerLink='/power'>Power Details</a><br/>
+
+</nav>
+
+<router-outlet></router-outlet>
+ 

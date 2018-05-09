@@ -1,0 +1,169 @@
+** Basic Building Blocks of Angular **
+	1. Modules
+		packages: collection of application (logical  + relevant) (C + D + S + F + R)
+			logical units of application code
+			** Root module : one ***
+		@: Decorators : Annotations	: configure the module
+	2. Components : view component
+		class (prop + methods) + VIEW (html template) + decorator
+		Data[property] class => View {{}} : interpolation / One - way binding
+		View [events]: event Handler () : One-way
+		
+				CLASS -> VIEW  {{}} / [] property-attribute binding 
+				VIEW -> CLASS  ()  event
+		[(ngModel)] : 2 - way binding
+			Life cycle:
+			OnChanges() : invoked in parent and child 
+					it is triggered for the child
+					would function if there is a change in the parent 
+					and it will communicate to the child
+			
+			OnInit() : after component is created
+			
+			OnDestroy() : before component is destroyed
+			
+			[https://angular.io/guide/lifecycle-hooks]
+			
+	3. Directives as attributes [* structural directive: DOM manipulation]
+		Inbuilt : ngFor , ng-if-else
+	4. Services
+			Models : Helper class / Biz methods / Web api / DB
+			singletons: one instance of the service	
+				Global : Module
+				Local: Component and its child components
+				
+				More than one component is sharing data [courses] : Services:
+				
+			HTTP Module : Async calls
+					Observables [RxJs: Reactive Extensions for Java script: external JS library] 
+					
+					Sequence of event(s) [array] that will arrive in future
+			
+					News Paper Agency -> News Center(web api / DB)
+					Use the news available 
+					[conversion in appropriate(News format] <-(news) : formats / real time
+					
+					As an end customer we have subscribe to the agency
+					
+					Component(Customer:UI) -> Angular Service(HTTP Protocol: REQUEST) -> Web Api / DB
+					Component(subscribe) <- convert into JSON format <- HTTP RESPONSE:real time
+														map				OBSERVABLE
+	5. Routers
+			SPA: 	
+			RouterModule:
+				a. Configure different routes (URL paths)
+				b. Add navigation links
+				c. router - outlet :view which will hold the view / o.p
+				
+	6. Filters - Pipes {{data | pipe : argument1 : argument 2 | pipe1 }}
+			data formatting and presentation
+			Built-in Filters
+			Custom filtes
+	
+	Form Validations:
+		Template driven Forms: directives clubed with HTML
+			ng-touched : control has been visited : enabled
+			
+			ng-untouched : control has not been visited : disabled
+			
+			ng-dirty : value is changed
+			
+			ng-pristine : value is new
+			
+			ng-valid : control is valid
+			
+			ng-invalid : control is In valid
+			
+			ngForm : exposes the entire form into the local var
+			ngModel : exposes the input control into the local var
+			
+Angular 4:
+	Client side f/w 
+	MVC
+	Modular 
+	Google - open source
+	SPA : Single Page Application
+	Web + Mobile development
+	
+	
+Pre-requistes:
+	1. HTML and CSS
+	2. Javascript
+	3. Typescript 2.0 (Superset of JS + OOPs [ES 6]) Official lang : Microsoft
+		(.ts) => (.js) [TSC]
+		
+Installables:
+	Node JS (https://nodejs.org/en/) (8.9) (Windows 10, X64)
+			NPM : Node Package manager [utility tool] : install and save the dependencies. (5.5.1)
+			
+	Angular CLI: (https://cli.angular.io/) Command Line Tool: Quick development
+		*** Open internet connection *** (CLI : 1.7) Angular 4:
+
+	
+	Angular 4 Documentation: (https://angular.io/)
+	
+	Visual Studio code Editor: Microsoft : extensions reqd for Angular 
+	
+Github Link for startup project:
+https://github.com/yukti-12/Angualar4-Startup.git
+
+Commands:
+1. ng new project-name
+	
+   ng new dummy-app --skip-install
+     (skip installing the dependencies)
+	 
+2. To install dependencies:
+		npm install
+
+3. To start server
+		ng serve
+			OR
+		ng serve -p 9000
+			OR
+		npm start
+
+4. Installing other dependencies/ packages
+	npm install bootstrap@4.4.3
+	
+5. To create component
+	ng generate component  user --flat [no folder structure]
+	ng g c user
+
+6. To create a class
+	ng g cl course
+    ng g i course
+	ng g i quote
+
+7. To create a service
+	ng g s course
+	
+8. To create a pipe
+	ng g p power
+	
+9. To create custom directive
+	ng g d shadow
+   	 
+
+10. Generate module
+	ng g m routing
+	
+11. To build 
+	ng build   [dist]
+	
+12. To production mode (vendor bundle is discarded and sise reduces drastically)
+	ng serve --prod
+	ng serve -aot
+
+13. Launch the application in default browser
+	ng serve -o
+	
+	** Angular Resources ***
+	
+	https://angular.io/resources
+	
+	ng-x bootstrap: pre-requiste: bootstrap 3 or 4
+	
+	npm install ngx-bootstrap --save
+	(download the bootstrap library from npm repository and place it in node_modeules folder .
+	--save will save the dependency as a production dependency)

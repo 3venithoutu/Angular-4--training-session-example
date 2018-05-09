@@ -1,0 +1,48 @@
+<div>
+ Name:  {{studName}}<br/>
+ Gender: {{gender}}
+</div>
+<hr/>
+<form #studForm=ngForm (ngSubmit)='saveStudent(studForm.value)'>
+  First Name: <input type='text' name='studName' required minlength='5' [(ngModel)]='studName' #sname=ngModel/><br>
+  <span *ngIf='(sname.dirty || sname.touched) && sname.invalid'>
+    <span *ngIf='sname.errors.required' style="color:red">
+        Name is required !
+    </span>
+    <span *ngIf='sname.errors.minlength' style="color:red">
+        Name should match minlength !
+    </span>
+  </span><br/>
+  Password: <input type='password' name='studPwd' required pattern='[A-Za-z0-9]{8,15}' ngModel #spwd=ngModel/><br>
+ <span *ngIf='(spwd.dirty || spwd.touched) && spwd.invalid'>
+    <span *ngIf='spwd.errors.required' style="color:red">
+        Password is required !
+    </span>
+    <span *ngIf='spwd.errors.pattern' style="color:red">
+       Password does not match the pattern !
+    </span>
+  </span><br/>
+  Gender: <input type='radio' name='gender' value='female' [(ngModel)]='gender' #gfield=ngModel required/>Female
+  <input type='radio' name='gender' value='male' ngModel />Male
+<span *ngIf='(gfield.dirty || gfield.touched) && gfield.invalid'>
+    <span *ngIf='gfield.errors.required' style="color:red">
+        Gender is required !
+    </span>
+</span><br/>
+Education: <select name='qualification' #sedu=ngModel ngModel required>
+    <option value=''>--Select Qulaification--</option>
+    <option *ngFor='let edu of education' [value]=edu>{{edu}}</option>
+  </select>
+  <span *ngIf='(sedu.dirty || sedu.touched) && sedu.invalid'>
+    <span *ngIf='sedu.errors.required' style="color:red">
+        Education is required !
+    </span>
+</span><br/>
+Date of Birth: <input type='date' name='dob' ngModel #sdob=ngModel required/>
+  <span *ngIf='(sdob.dirty || sdob.touched) && sdob.invalid'>
+    <span *ngIf='sdob.errors.required' style="color:red">
+        DOB is required !
+    </span>
+</span><br/>
+  <input type='submit' value='Save Student' [disabled]=!studForm.valid/>
+</form>
